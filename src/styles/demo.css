@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3e5f5; /* Fondo lila claro */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #6a1b9a; /* Color lila oscuro */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #6a1b9a;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #333;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: #8e24aa;
+    border-color: #8e24aa;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #6a1b9a;
+    border-color: #6a1b9a;
+}
+
+.btn-warning {
+    background-color: #ffd54f;
+    border-color: #ffd54f;
+    color: white;
+}
+
+.btn-warning:hover {
+    background-color: #ffb300;
+    border-color: #ffb300;
+}
+
+.btn-danger {
+    background-color: #e57373;
+    border-color: #e57373;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #ef5350;
+    border-color: #ef5350;
+}

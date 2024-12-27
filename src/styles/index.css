@@ -1,3 +1,49 @@
-/* 
-    General Styles
-*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ede7f6; /* Fondo lila muy claro */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #4a148c; /* Color lila oscuro */
+    font-weight: bold;
+}
+
+p {
+    font-size: 1rem;
+    color: #333;
+}
+
+a {
+    color: #6a1b9a;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.navbar {
+    background-color: #8e24aa;
+    padding: 10px;
+}
+
+.navbar a {
+    color: white;
+    font-weight: bold;
+}
+
+.footer {
+    background-color: #8e24aa;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
