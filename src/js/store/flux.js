@@ -1,68 +1,34 @@
 const getState = ({ getStore, getActions, setStore }) => {
     return {
         store: {
-            demo: [
-                {
-                    title: "FIRST",
-                    background: "white",
-                    initial: "white"
-                },
-                {
-                    title: "SECOND",
-                    background: "white",
-                    initial: "white"
-                }
-            ],
             contacts: []
         },
         actions: {
-            exampleFunction: () => {
-                getActions().changeColor(0, "green");
-            },
-            loadSomeData: () => {
-                /**
-                    fetch().then().then(data => setStore({ "foo": data.bar }))
-                */
-            },
-            changeColor: (index, color) => {
-                const store = getStore();
-                const demo = store.demo.map((elm, i) => {
-                    if (i === index) elm.background = color;
-                    return elm;
-                });
-                setStore({ demo: demo });
-            },
             getContacts: async () => {
                 try {
-                    const response = await fetch('https://playground.4geeks.com/apis/fake/contact/agenda/my_agenda');
+                    const response = await fetch('https://playground.4geeks.com/contact/agendas/albanta/contacts');
                     if (response.ok) {
                         const data = await response.json();
-                        setStore({ contacts: data });
+                        setStore({ contacts: data.contacts });
                     } else {
-                        await getActions().crearAlbanta();
+                         getActions().crearAlbanta();
                     }
                 } catch (error) {
                     console.error('Error fetching contacts:', error);
-                    await getActions().crearAlbanta();
+                     getActions().crearAlbanta();
                 }
             },
             crearAlbanta: async () => {
                 try {
-                    const response = await fetch('https://playground.4geeks.com/apis/fake/contact/', {
+                    const response = await fetch('https://playground.4geeks.com/contact/agendas/albanta', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({
-                            full_name: "Albanta",
-                            email: "albanta.leondelgado@gmail.com",
-                            agenda_slug: "my_agenda",
-                            address: "123 Main St",
-                            phone: "555-555-555"
-                        })
+                        
                     });
                     if (response.ok) {
-                        await getActions().getContacts();
+                         getActions().getContacts();
                     } else {
                         throw new Error('Failed to create Albanta contact');
                     }
@@ -72,7 +38,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             },
             addContact: async (contact) => {
                 try {
-                    const response = await fetch('https://playground.4geeks.com/apis/fake/contact/', {
+                    const response = await fetch('https://playground.4geeks.com/contact/agendas/albanta/contacts', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -90,7 +56,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             },
             updateContact: async (id, updatedContact) => {
                 try {
-                    const response = await fetch(`https://playground.4geeks.com/apis/fake/contact/${id}`, {
+                    const response = await fetch(`https://playground.4geeks.com/contact/agendas/albanta/contacts/${id}`, {
                         method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json'
@@ -108,7 +74,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             },
             deleteContact: async (id) => {
                 try {
-                    const response = await fetch(`https://playground.4geeks.com/apis/fake/contact/${id}`, {
+                    const response = await fetch(`https://playground.4geeks.com/contact/agendas/albanta/contacts/${id}`, {
                         method: 'DELETE'
                     });
                     if (response.ok) {

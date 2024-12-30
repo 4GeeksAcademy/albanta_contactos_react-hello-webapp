@@ -1,14 +1,14 @@
 import React, { useContext, useEffect } from "react";
 import "../../styles/home.css";
 import { Context } from "../store/appContext";
-import ContactCard from "../components/ContactCard";
+import ContactCard from "../component/contactCard";
 import { Link } from "react-router-dom";
 
 const Home = () => {
     const { store, actions } = useContext(Context);
-
+    console.log(store.contacts);
     useEffect(() => {
-        actions.getContacts(); // Cargar los contactos al montar el componente
+        actions.getContacts(); 
     }, []);
 
     return (

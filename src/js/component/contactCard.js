@@ -9,7 +9,7 @@ const ContactCard = ({ contact }) => {
         <div className="col-md-4 mb-4">
             <div className="card">
                 <div className="card-body">
-                    <h5 className="card-title">{contact.full_name}</h5>
+                    <h5 className="card-title">{contact.name}</h5>
                     <p className="card-text"><strong>Address:</strong> {contact.address}</p>
                     <p className="card-text"><strong>Phone:</strong> {contact.phone}</p>
                     <p className="card-text"><strong>Email:</strong> {contact.email}</p>
